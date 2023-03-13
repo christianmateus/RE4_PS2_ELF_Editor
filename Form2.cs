@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-
+using System.Windows.Forms;
 namespace ELFeditor
 {
     public partial class Form2 : Form

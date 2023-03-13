@@ -1,5 +1,10 @@
+using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ELFeditor
 {
@@ -500,7 +505,6 @@ namespace ELFeditor
                     if (tempIndex == weaponIndex)
                     {
                         br.BaseStream.Position = i;
-                        Console.WriteLine(i.ToString("X"));
                         tab3Damage1.Value = (decimal)br.ReadSingle();
                         tab3Damage2.Value = (decimal)br.ReadSingle();
                         tab3Damage3.Value = (decimal)br.ReadSingle();
@@ -518,7 +522,6 @@ namespace ELFeditor
                 {
                     if (tempIndex == weaponIndex)
                     {
-                        Console.WriteLine("Encontrou o index");
                         br.BaseStream.Position = i;
                         tab3Damage1.Value = (decimal)br.ReadSingle();
                         tab3Damage2.Value = (decimal)br.ReadSingle();
@@ -921,6 +924,162 @@ namespace ELFeditor
             }
             bw.Close();
         }
+        public void GetMerchantStock(string regionName)
+        {
+            BinaryReader br = new BinaryReader(File.Open(dialog.FileName, FileMode.Open));
+            MerchantStock merchantStock = new MerchantStock();
+            merchantStock.PopulateArrays();
+
+            int merchantIndex = tab8CbMerchant.SelectedIndex; // Option selected on Combobox
+            int lineSpacing = 0;
+            int tempCounter = 0;
+            int slesOffsetDifference = 0;
+
+            // Sets offset difference if SLES region is detected
+            if (regionName == "sles")
+            { slesOffsetDifference = 0x280; }
+            int removeIndex = 1; // Used to remove elements
+
+            // Remove elements (controls)
+            foreach (Control item in tabPage7.Controls.OfType<ComboBox>().ToList())
+            {
+                if (item.Name == $"tab8Item{removeIndex}")
+                {
+                    tabPage7.Controls.Remove(item);
+                    removeIndex++;
+                }
+            }
+            removeIndex = 1;
+            foreach (Control item in tabPage7.Controls.OfType<Label>().ToList())
+            {
+                if (item.Name == $"tab8Lbl{removeIndex}")
+                {
+                    tabPage7.Controls.Remove(item);
+                    removeIndex++;
+                }
+            }
+            removeIndex = 1;
+            foreach (Control item in tabPage7.Controls.OfType<NumericUpDown>().ToList())
+            {
+                if (item.Name == $"tab8SpinBox{removeIndex}")
+                {
+                    tabPage7.Controls.Remove(item);
+                    removeIndex++;
+                }
+            }
+            removeIndex = 1;
+            foreach (Control item in tabPage7.Controls.OfType<Label>().ToList())
+            {
+                if (item.Name == $"tab8LblQuantity{removeIndex}")
+                {
+                    tabPage7.Controls.Remove(item);
+                    removeIndex++;
+                }
+            }
+            removeIndex = 1;
+
+            // Create elements
+            for (int z = 0; z < merchantStock.MerchantOffsets[merchantIndex].Length; z++)
+            {
+                int lblSpacing = 0;
+                int cbSpacing = 0;
+
+                // Creates spacing between control elements
+                if (z % 2 != 0)
+                {
+                    lblSpacing = 365;
+                    cbSpacing = 375;
+                }
+                if (tempCounter == 2) { lineSpacing += 50; tempCounter = 0; }
+
+                // Read every offset from the array, based on selected merchant
+                br.BaseStream.Position = merchantStock.MerchantOffsets[merchantIndex][z] + slesOffsetDifference;
+
+                // Combobox for Item Name
+                ComboBox cb = new ComboBox();
+                cb.Name = $"tab8Item{z + 1}";
+                cb.Location = new Point(85 + cbSpacing, 120 + lineSpacing);
+                cb.Size = new Size(223, 23);
+                cb.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                // Add string values from list to each combobox (SLOW!!)
+                foreach (var item in merchantStock.ItemList)
+                {
+                    cb.Items.Add(item.ToUpper());
+                }
+                cb.SelectedIndex = br.ReadInt16();
+                tabPage7.Controls.Add(cb);
+
+                // Label Item ID
+                Label lblTitle = new Label();
+                lblTitle.Name = $"tab8Lbl{z + 1}";
+                lblTitle.Text = $"Item ID {z + 1}";
+                lblTitle.ForeColor = Color.FromArgb(230, 230, 230);
+                lblTitle.Location = new Point(175 + lblSpacing, 102 + lineSpacing);
+                lblTitle.AutoSize = true;
+                tabPage7.Controls.Add(lblTitle);
+
+                // Spin Box for Quantity
+                NumericUpDown spinBox = new NumericUpDown();
+                spinBox.Name = $"tab8SpinBox{z + 1}";
+                spinBox.Location = new Point(338 + lblSpacing, 120 + lineSpacing);
+                spinBox.Size = new Size(88, 23);
+                spinBox.TextAlign = HorizontalAlignment.Center;
+                spinBox.Maximum = 65000;
+                spinBox.Increment = 1;
+                spinBox.Value = br.ReadInt16();
+                tabPage7.Controls.Add(spinBox);
+
+                // Label Quantity
+                Label lblQuantity = new Label();
+                lblQuantity.Name = $"tab8LblQuantity{z + 1}";
+                lblQuantity.Text = "Quantity";
+                lblQuantity.ForeColor = Color.FromArgb(230, 230, 230);
+                lblQuantity.Location = new Point(353 + lblSpacing, 102 + lineSpacing);
+                lblQuantity.AutoSize = true;
+                tabPage7.Controls.Add(lblQuantity);
+
+                tempCounter++;
+            }
+            br.Close();
+        }
+        public void SetMerchantStock(string regionName)
+        {
+            BinaryWriter bw = new BinaryWriter(File.Open(dialog.FileName, FileMode.Open));
+            MerchantStock merchantStock = new MerchantStock();
+            merchantStock.PopulateArrays();
+
+            int slesOffsetDifference = 0;
+            // Sets offset difference if SLES region is detected
+            if (regionName == "sles")
+            { slesOffsetDifference = 0x280; }
+            int cbNumber = 0;
+            int merchantIndex = tab8CbMerchant.SelectedIndex; // Option selected on Combobox
+
+            // Iterates through each combobox
+            foreach (var item in tabPage7.Controls.OfType<ComboBox>().ToList())
+            {
+                if (item.Name == $"tab8Item{cbNumber + 1}")
+                {
+                    bw.BaseStream.Position = merchantStock.MerchantOffsets[merchantIndex][cbNumber] + slesOffsetDifference;
+                    bw.Write((short)item.SelectedIndex);
+                    cbNumber++;
+                }
+            }
+            cbNumber = 0;
+
+            // Iterates through each spinbox
+            foreach (var item in tabPage7.Controls.OfType<NumericUpDown>().ToList())
+            {
+                if (item.Name == $"tab8SpinBox{cbNumber + 1}")
+                {
+                    bw.BaseStream.Position = merchantStock.MerchantOffsets[merchantIndex][cbNumber] + slesOffsetDifference + 2;
+                    bw.Write((short)item.Value);
+                    cbNumber++;
+                }
+            }
+            bw.Close();
+        }
         public void GetItemsSlots(string regionName)
         {
             BinaryReader br = new BinaryReader(File.Open(dialog.FileName, FileMode.Open));
@@ -933,7 +1092,6 @@ namespace ELFeditor
                 {
                     if (tempIndex == weaponIndex)
                     {
-                        Console.WriteLine(i.ToString("X"));
                         br.BaseStream.Position = i;
                         tab9ItemID.Value = br.ReadInt16();
                         br.ReadUInt16(); // Skips 2 bytes
@@ -952,7 +1110,6 @@ namespace ELFeditor
                 {
                     if (tempIndex == weaponIndex)
                     {
-                        Console.WriteLine(i.ToString("X"));
                         br.BaseStream.Position = i;
                         tab9ItemID.Value = br.ReadInt16();
                         br.ReadUInt16(); // Skips 2 bytes
@@ -1112,35 +1269,44 @@ namespace ELFeditor
         }
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string region = GetDiscRegion();
+            if (dialog.FileName != "")
+            {
+                string region = GetDiscRegion();
 
-            if (region == "SLUS")
-            {
-                SaveSLUSAcumulator();
-                SetWeaponsCapacity("slus");
-                SetWeaponsDamage("slus");
-                SetWeaponsReload("slus");
-                SetWeaponsFiring("slus");
-                SetUpgradesAvailable("slus");
-                SetMerchantPrices("slus");
-                SetItemsSlots("slus");
+                if (region == "SLUS")
+                {
+                    SaveSLUSAcumulator();
+                    SetWeaponsCapacity("slus");
+                    SetWeaponsDamage("slus");
+                    SetWeaponsReload("slus");
+                    SetWeaponsFiring("slus");
+                    SetUpgradesAvailable("slus");
+                    SetMerchantPrices("slus");
+                    SetItemsSlots("slus");
+                    SetMerchantStock("slus");
+                }
+                else if (region == "SLES")
+                {
+                    SaveSLESAcumulator();
+                    SetWeaponsCapacity("sles");
+                    SetWeaponsDamage("sles");
+                    SetWeaponsReload("sles");
+                    SetWeaponsFiring("sles");
+                    SetUpgradesAvailable("sles");
+                    SetMerchantPrices("sles");
+                    SetItemsSlots("sles");
+                    SetMerchantStock("sles");
+                }
+                else if (region == "SLPM")
+                {
+                    SaveSLPMAcumulator();
+                }
+                else { return; }
             }
-            else if (region == "SLES")
+            else
             {
-                SaveSLESAcumulator();
-                SetWeaponsCapacity("sles");
-                SetWeaponsDamage("sles");
-                SetWeaponsReload("sles");
-                SetWeaponsFiring("sles");
-                SetUpgradesAvailable("sles");
-                SetMerchantPrices("sles");
-                SetItemsSlots("sles");
+                return;
             }
-            else if (region == "SLPM")
-            {
-                SaveSLPMAcumulator();
-            }
-            else { return; }
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1148,10 +1314,10 @@ namespace ELFeditor
         }
         private void extractELFToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string region = GetDiscRegion();
-
             if (dialog.FileName != "")
             {
+                string region = GetDiscRegion();
+
                 BinaryReader br = new BinaryReader(File.Open(dialog.FileName, FileMode.Open));
                 br.BaseStream.Position = acumulator.ELF_START;
 
@@ -1189,8 +1355,110 @@ namespace ELFeditor
                 return;
             }
         }
+        private void importCustomELFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lblRegion.Text != "")
+            {
+                // Open dialog box for file select
+                OpenFileDialog customElf = new OpenFileDialog();
+                customElf.Filter = "RE4 Executable File(*.elf;*.34;*.02)|*.elf;*.34;*.02";
+                customElf.ShowDialog();
+
+                string region = GetDiscRegion();
+                BinaryReader br = new BinaryReader(File.Open(customElf.FileName, FileMode.Open));
+                BinaryWriter bw = new BinaryWriter(File.Open(dialog.FileName, FileMode.Open));
+
+                // Verifies executable based on its length
+                if (br.BaseStream.Length == 0x2F413C)
+                {
+                    if (region == "SLUS")
+                    {
+                        bw.BaseStream.Position = acumulator.ELF_START;
+                        bw.Write(br.ReadBytes((int)br.BaseStream.Length));
+                        MessageBox.Show("SLUS executable file imported successfully!", "Info", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot import different region executable, only: SLUS to SLUS or SLES to SLES.",
+                            "ERROR: Mismatch region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else if (br.BaseStream.Length == 0x2F43BC)
+                {
+                    if (region == "SLES")
+                    {
+                        bw.BaseStream.Position = acumulator.ELF_START;
+                        bw.Write(br.ReadBytes((int)br.BaseStream.Length));
+                        MessageBox.Show("SLES executable file imported successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot import different region executable, only: SLUS to SLUS or SLES to SLES.",
+                            "ERROR: Mismatch region", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBoxes("regionError");
+                }
+                bw.Close();
+                br.Close();
+            }
+            else
+            {
+                return;
+            }
+        }
         private void defaultValuesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dialog.FileName != "")
+            {
+                string region = GetDiscRegion();
+
+                // Message box for confirmation
+                DialogResult setToDefault = MessageBox.Show("Set ALL values to default?", "Question", MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Question);
+                if (setToDefault == DialogResult.Yes)
+                {
+                    BinaryWriter bw = new BinaryWriter(File.Open(dialog.FileName, FileMode.Open));
+                    if (region == "SLUS")
+                    {
+                        try
+                        {
+                            BinaryReader br = new BinaryReader(File.Open("Properties/SLUS_211.34", FileMode.Open));
+                            bw.BaseStream.Position = acumulator.ELF_START;
+                            bw.Write(br.ReadBytes((int)br.BaseStream.Length));
+                            br.Close();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Default executable file not found on Properties folder. Re-download the tool to fix it.");
+                        }
+                    }
+                    else if (region == "SLES")
+                    {
+                        try
+                        {
+                            BinaryReader br = new BinaryReader(File.Open("Properties/SLES_537.02", FileMode.Open));
+                            bw.BaseStream.Position = acumulator.ELF_START;
+                            bw.Write(br.ReadBytes((int)br.BaseStream.Length));
+                            br.Close();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Default executable file not found on Properties folder. Re-download the tool to fix it.");
+                        }
+                    }
+                    bw.Close();
+                }
+                else return;
+            }
+            else
+            {
+                return;
+            }
+
             handgunAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Handgun_DEFAULT;
             magnumAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Magnum_DEFAULT;
             handcannonAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Handcannon_DEFAULT;
@@ -1203,13 +1471,6 @@ namespace ELFeditor
             minethrowerAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Minethrower_DEFAULT;
             treasuresAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Treasures_DEFAULT;
             itemsAmmo.Value = (decimal)ACUMULATOR_DEFAULT.Items_DEFAULT;
-        }
-        private void nullAllValuesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            itemsAmmo.Value = 0; handgunAmmo.Value = 0; magnumAmmo.Value = 0;
-            handcannonAmmo.Value = 0; shotgunAmmo.Value = 0; shotgunEasyAmmo.Value = 0;
-            rifleAmmo.Value = 0; rifleEasyAmmo.Value = 0; tmpAmmo.Value = 0;
-            minethrowerEasyAmmo.Value = 0; minethrowerAmmo.Value = 0; treasuresAmmo.Value = 0;
         }
         private void creditsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1268,36 +1529,64 @@ namespace ELFeditor
         }
         private void tab6CbUpgrades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (GetDiscRegion() == "SLUS")
+            if (dialog.FileName != "")
             {
-                GetUpgradesAvailable("slus");
+                if (GetDiscRegion() == "SLUS")
+                {
+                    GetUpgradesAvailable("slus");
+                }
+                else if (GetDiscRegion() == "SLES")
+                {
+                    GetUpgradesAvailable("sles");
+                }
+
             }
-            else if (GetDiscRegion() == "SLES")
-            {
-                GetUpgradesAvailable("sles");
-            }
+            else { return; }
         }
         private void tab7CbMerchantPrices_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (GetDiscRegion() == "SLUS")
+            if (dialog.FileName != "")
             {
-                GetMerchantPrices("slus");
+                if (GetDiscRegion() == "SLUS")
+                {
+                    GetMerchantPrices("slus");
+                }
+                else if (GetDiscRegion() == "SLES")
+                {
+                    GetMerchantPrices("sles");
+                }
             }
-            else if (GetDiscRegion() == "SLES")
+            else { return; }
+        }
+        private void tab8CbMerchant_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dialog.FileName != "")
             {
-                GetMerchantPrices("sles");
+                if (GetDiscRegion() == "SLUS")
+                {
+                    GetMerchantStock("slus");
+                }
+                else if (GetDiscRegion() == "SLES")
+                {
+                    GetMerchantStock("sles");
+                }
             }
+            else { return; }
         }
         private void tab9CbItemsSlots_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (GetDiscRegion() == "SLUS")
+            if (dialog.FileName != "")
             {
-                GetItemsSlots("slus");
+                if (GetDiscRegion() == "SLUS")
+                {
+                    GetItemsSlots("slus");
+                }
+                else if (GetDiscRegion() == "SLES")
+                {
+                    GetItemsSlots("sles");
+                }
             }
-            else if (GetDiscRegion() == "SLES")
-            {
-                GetItemsSlots("sles");
-            }
+            else { return; }
         }
         private void tab9Vertical_ValueChanged(object sender, EventArgs e)
         {
@@ -1323,5 +1612,6 @@ namespace ELFeditor
             int tempValue = (int)(tab9Vertical.Value * tab9Horizontal.Value);
             tab9Result.Text = tempValue.ToString();
         }
+
     }
 }

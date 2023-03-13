@@ -1,4 +1,6 @@
-﻿namespace ELFeditor
+﻿using System.Windows.Forms;
+
+namespace ELFeditor
 {
     partial class Form1
     {
@@ -156,6 +158,8 @@
             this.tab7PriceBox = new System.Windows.Forms.NumericUpDown();
             this.label51 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tab8CbMerchant = new System.Windows.Forms.ComboBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label61 = new System.Windows.Forms.Label();
             this.tab9Result = new System.Windows.Forms.Label();
@@ -184,9 +188,9 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extractELFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nullAllValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importCustomELFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.defaultValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contibuteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEModdingForumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creditsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -250,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tab7WeaponID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab7Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab7PriceBox)).BeginInit();
+            this.tabPage7.SuspendLayout();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab9YCoordinate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab9XCoordinate)).BeginInit();
@@ -271,7 +276,7 @@
             this.mainPanel.Controls.Add(this.menuStrip1);
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(893, 450);
+            this.mainPanel.Size = new System.Drawing.Size(893, 531);
             this.mainPanel.TabIndex = 0;
             // 
             // lblRegion
@@ -317,7 +322,7 @@
             this.mainForm.Location = new System.Drawing.Point(0, 99);
             this.mainForm.Name = "mainForm";
             this.mainForm.SelectedIndex = 0;
-            this.mainForm.Size = new System.Drawing.Size(893, 351);
+            this.mainForm.Size = new System.Drawing.Size(893, 432);
             this.mainForm.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mainForm.TabIndex = 0;
             // 
@@ -362,13 +367,13 @@
             this.acumulatorForm.Location = new System.Drawing.Point(4, 24);
             this.acumulatorForm.Name = "acumulatorForm";
             this.acumulatorForm.Padding = new System.Windows.Forms.Padding(3);
-            this.acumulatorForm.Size = new System.Drawing.Size(885, 323);
+            this.acumulatorForm.Size = new System.Drawing.Size(885, 404);
             this.acumulatorForm.TabIndex = 0;
             this.acumulatorForm.Text = "Acumulator";
             // 
             // magnumAmateurAmmo
             // 
-            this.magnumAmateurAmmo.Location = new System.Drawing.Point(689, 98);
+            this.magnumAmateurAmmo.Location = new System.Drawing.Point(687, 140);
             this.magnumAmateurAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -383,7 +388,7 @@
             // 
             this.SLPMlabel2.AutoSize = true;
             this.SLPMlabel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SLPMlabel2.Location = new System.Drawing.Point(619, 77);
+            this.SLPMlabel2.Location = new System.Drawing.Point(617, 119);
             this.SLPMlabel2.Name = "SLPMlabel2";
             this.SLPMlabel2.Size = new System.Drawing.Size(196, 15);
             this.SLPMlabel2.TabIndex = 32;
@@ -392,7 +397,7 @@
             // 
             // arrowsAmmo
             // 
-            this.arrowsAmmo.Location = new System.Drawing.Point(690, 271);
+            this.arrowsAmmo.Location = new System.Drawing.Point(688, 313);
             this.arrowsAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -407,7 +412,7 @@
             // 
             this.SLPMlabel5.AutoSize = true;
             this.SLPMlabel5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SLPMlabel5.Location = new System.Drawing.Point(711, 252);
+            this.SLPMlabel5.Location = new System.Drawing.Point(709, 294);
             this.SLPMlabel5.Name = "SLPMlabel5";
             this.SLPMlabel5.Size = new System.Drawing.Size(44, 15);
             this.SLPMlabel5.TabIndex = 30;
@@ -416,7 +421,7 @@
             // 
             // tmpAmateurAmmo
             // 
-            this.tmpAmateurAmmo.Location = new System.Drawing.Point(690, 214);
+            this.tmpAmateurAmmo.Location = new System.Drawing.Point(688, 256);
             this.tmpAmateurAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -431,7 +436,7 @@
             // 
             this.SLPMlabel4.AutoSize = true;
             this.SLPMlabel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SLPMlabel4.Location = new System.Drawing.Point(661, 193);
+            this.SLPMlabel4.Location = new System.Drawing.Point(659, 235);
             this.SLPMlabel4.Name = "SLPMlabel4";
             this.SLPMlabel4.Size = new System.Drawing.Size(146, 15);
             this.SLPMlabel4.TabIndex = 28;
@@ -440,7 +445,7 @@
             // 
             // shotgunAmateurAmmo
             // 
-            this.shotgunAmateurAmmo.Location = new System.Drawing.Point(689, 157);
+            this.shotgunAmateurAmmo.Location = new System.Drawing.Point(687, 199);
             this.shotgunAmateurAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -455,7 +460,7 @@
             // 
             this.SLPMlabel3.AutoSize = true;
             this.SLPMlabel3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SLPMlabel3.Location = new System.Drawing.Point(679, 136);
+            this.SLPMlabel3.Location = new System.Drawing.Point(677, 178);
             this.SLPMlabel3.Name = "SLPMlabel3";
             this.SLPMlabel3.Size = new System.Drawing.Size(109, 15);
             this.SLPMlabel3.TabIndex = 26;
@@ -464,7 +469,7 @@
             // 
             // handgunAmateurAmmo
             // 
-            this.handgunAmateurAmmo.Location = new System.Drawing.Point(689, 42);
+            this.handgunAmateurAmmo.Location = new System.Drawing.Point(687, 84);
             this.handgunAmateurAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -479,7 +484,7 @@
             // 
             this.SLPMlabel1.AutoSize = true;
             this.SLPMlabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SLPMlabel1.Location = new System.Drawing.Point(675, 21);
+            this.SLPMlabel1.Location = new System.Drawing.Point(673, 63);
             this.SLPMlabel1.Name = "SLPMlabel1";
             this.SLPMlabel1.Size = new System.Drawing.Size(114, 15);
             this.SLPMlabel1.TabIndex = 24;
@@ -488,7 +493,7 @@
             // 
             // itemsAmmo
             // 
-            this.itemsAmmo.Location = new System.Drawing.Point(507, 197);
+            this.itemsAmmo.Location = new System.Drawing.Point(505, 239);
             this.itemsAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -502,7 +507,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(464, 201);
+            this.label8.Location = new System.Drawing.Point(462, 243);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 15);
             this.label8.TabIndex = 22;
@@ -510,7 +515,7 @@
             // 
             // treasuresAmmo
             // 
-            this.treasuresAmmo.Location = new System.Drawing.Point(507, 168);
+            this.treasuresAmmo.Location = new System.Drawing.Point(505, 210);
             this.treasuresAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -524,7 +529,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(426, 143);
+            this.label9.Location = new System.Drawing.Point(424, 185);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 15);
             this.label9.TabIndex = 20;
@@ -532,7 +537,7 @@
             // 
             // minethrowerAmmo
             // 
-            this.minethrowerAmmo.Location = new System.Drawing.Point(507, 139);
+            this.minethrowerAmmo.Location = new System.Drawing.Point(505, 181);
             this.minethrowerAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -546,7 +551,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label10.Location = new System.Drawing.Point(388, 114);
+            this.label10.Location = new System.Drawing.Point(386, 156);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 15);
             this.label10.TabIndex = 18;
@@ -554,7 +559,7 @@
             // 
             // minethrowerEasyAmmo
             // 
-            this.minethrowerEasyAmmo.Location = new System.Drawing.Point(507, 110);
+            this.minethrowerEasyAmmo.Location = new System.Drawing.Point(505, 152);
             this.minethrowerEasyAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -568,7 +573,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(444, 172);
+            this.label11.Location = new System.Drawing.Point(442, 214);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 15);
             this.label11.TabIndex = 16;
@@ -576,7 +581,7 @@
             // 
             // tmpAmmo
             // 
-            this.tmpAmmo.Location = new System.Drawing.Point(507, 81);
+            this.tmpAmmo.Location = new System.Drawing.Point(505, 123);
             this.tmpAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -590,7 +595,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label12.Location = new System.Drawing.Point(400, 85);
+            this.label12.Location = new System.Drawing.Point(398, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(101, 15);
             this.label12.TabIndex = 14;
@@ -598,7 +603,7 @@
             // 
             // rifleEasyAmmo
             // 
-            this.rifleEasyAmmo.Location = new System.Drawing.Point(225, 230);
+            this.rifleEasyAmmo.Location = new System.Drawing.Point(223, 272);
             this.rifleEasyAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -612,7 +617,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(88, 234);
+            this.label6.Location = new System.Drawing.Point(86, 276);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 15);
             this.label6.TabIndex = 12;
@@ -620,7 +625,7 @@
             // 
             // rifleAmmo
             // 
-            this.rifleAmmo.Location = new System.Drawing.Point(225, 201);
+            this.rifleAmmo.Location = new System.Drawing.Point(223, 243);
             this.rifleAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -634,7 +639,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(188, 205);
+            this.label7.Location = new System.Drawing.Point(186, 247);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 15);
             this.label7.TabIndex = 10;
@@ -642,7 +647,7 @@
             // 
             // shotgunEasyAmmo
             // 
-            this.shotgunEasyAmmo.Location = new System.Drawing.Point(225, 172);
+            this.shotgunEasyAmmo.Location = new System.Drawing.Point(223, 214);
             this.shotgunEasyAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -656,7 +661,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(129, 176);
+            this.label5.Location = new System.Drawing.Point(127, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 15);
             this.label5.TabIndex = 8;
@@ -664,7 +669,7 @@
             // 
             // shotgunAmmo
             // 
-            this.shotgunAmmo.Location = new System.Drawing.Point(225, 143);
+            this.shotgunAmmo.Location = new System.Drawing.Point(223, 185);
             this.shotgunAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -678,7 +683,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(167, 147);
+            this.label4.Location = new System.Drawing.Point(165, 189);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 6;
@@ -686,7 +691,7 @@
             // 
             // handcannonAmmo
             // 
-            this.handcannonAmmo.Location = new System.Drawing.Point(225, 114);
+            this.handcannonAmmo.Location = new System.Drawing.Point(223, 156);
             this.handcannonAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -700,7 +705,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(143, 118);
+            this.label3.Location = new System.Drawing.Point(141, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 15);
             this.label3.TabIndex = 4;
@@ -708,7 +713,7 @@
             // 
             // magnumAmmo
             // 
-            this.magnumAmmo.Location = new System.Drawing.Point(225, 85);
+            this.magnumAmmo.Location = new System.Drawing.Point(223, 127);
             this.magnumAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -722,7 +727,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(162, 89);
+            this.label2.Location = new System.Drawing.Point(160, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 2;
@@ -730,7 +735,7 @@
             // 
             // handgunAmmo
             // 
-            this.handgunAmmo.Location = new System.Drawing.Point(225, 56);
+            this.handgunAmmo.Location = new System.Drawing.Point(223, 98);
             this.handgunAmmo.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -744,7 +749,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(162, 60);
+            this.label1.Location = new System.Drawing.Point(160, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 0;
@@ -779,7 +784,7 @@
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(885, 323);
+            this.tabPage1.Size = new System.Drawing.Size(885, 404);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Weapons Capacity";
             // 
@@ -787,7 +792,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label33.Location = new System.Drawing.Point(357, 23);
+            this.label33.Location = new System.Drawing.Point(409, 53);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(86, 15);
             this.label33.TabIndex = 32;
@@ -795,7 +800,7 @@
             // 
             // tab2Exclusive
             // 
-            this.tab2Exclusive.Location = new System.Drawing.Point(353, 258);
+            this.tab2Exclusive.Location = new System.Drawing.Point(405, 288);
             this.tab2Exclusive.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -810,7 +815,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label25.Location = new System.Drawing.Point(358, 240);
+            this.label25.Location = new System.Drawing.Point(410, 270);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(55, 15);
             this.label25.TabIndex = 25;
@@ -818,7 +823,7 @@
             // 
             // tab2Capacity6
             // 
-            this.tab2Capacity6.Location = new System.Drawing.Point(594, 195);
+            this.tab2Capacity6.Location = new System.Drawing.Point(646, 225);
             this.tab2Capacity6.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -833,7 +838,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label24.Location = new System.Drawing.Point(597, 177);
+            this.label24.Location = new System.Drawing.Point(649, 207);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(62, 15);
             this.label24.TabIndex = 23;
@@ -841,7 +846,7 @@
             // 
             // tab2Capacity5
             // 
-            this.tab2Capacity5.Location = new System.Drawing.Point(501, 195);
+            this.tab2Capacity5.Location = new System.Drawing.Point(553, 225);
             this.tab2Capacity5.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -856,7 +861,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(504, 177);
+            this.label19.Location = new System.Drawing.Point(556, 207);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(62, 15);
             this.label19.TabIndex = 21;
@@ -864,7 +869,7 @@
             // 
             // tab2Capacity4
             // 
-            this.tab2Capacity4.Location = new System.Drawing.Point(406, 195);
+            this.tab2Capacity4.Location = new System.Drawing.Point(458, 225);
             this.tab2Capacity4.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -879,7 +884,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(409, 177);
+            this.label20.Location = new System.Drawing.Point(461, 207);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 15);
             this.label20.TabIndex = 19;
@@ -887,7 +892,7 @@
             // 
             // tab2Capacity3
             // 
-            this.tab2Capacity3.Location = new System.Drawing.Point(313, 195);
+            this.tab2Capacity3.Location = new System.Drawing.Point(365, 225);
             this.tab2Capacity3.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -902,7 +907,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label21.Location = new System.Drawing.Point(315, 177);
+            this.label21.Location = new System.Drawing.Point(367, 207);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(62, 15);
             this.label21.TabIndex = 17;
@@ -910,7 +915,7 @@
             // 
             // tab2Capacity2
             // 
-            this.tab2Capacity2.Location = new System.Drawing.Point(220, 195);
+            this.tab2Capacity2.Location = new System.Drawing.Point(272, 225);
             this.tab2Capacity2.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -925,7 +930,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label22.Location = new System.Drawing.Point(223, 177);
+            this.label22.Location = new System.Drawing.Point(275, 207);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(62, 15);
             this.label22.TabIndex = 15;
@@ -933,7 +938,7 @@
             // 
             // tab2Capacity1
             // 
-            this.tab2Capacity1.Location = new System.Drawing.Point(128, 195);
+            this.tab2Capacity1.Location = new System.Drawing.Point(180, 225);
             this.tab2Capacity1.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -947,7 +952,7 @@
             // label23
             // 
             this.label23.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label23.Location = new System.Drawing.Point(128, 177);
+            this.label23.Location = new System.Drawing.Point(180, 207);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(65, 15);
             this.label23.TabIndex = 13;
@@ -956,7 +961,7 @@
             // tab2AmmoUsed
             // 
             this.tab2AmmoUsed.Hexadecimal = true;
-            this.tab2AmmoUsed.Location = new System.Drawing.Point(501, 128);
+            this.tab2AmmoUsed.Location = new System.Drawing.Point(553, 158);
             this.tab2AmmoUsed.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -971,7 +976,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label18.Location = new System.Drawing.Point(498, 110);
+            this.label18.Location = new System.Drawing.Point(550, 140);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(73, 15);
             this.label18.TabIndex = 11;
@@ -980,7 +985,7 @@
             // tab2Attachment
             // 
             this.tab2Attachment.Hexadecimal = true;
-            this.tab2Attachment.Location = new System.Drawing.Point(407, 128);
+            this.tab2Attachment.Location = new System.Drawing.Point(459, 158);
             this.tab2Attachment.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -995,7 +1000,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label16.Location = new System.Drawing.Point(404, 110);
+            this.label16.Location = new System.Drawing.Point(456, 140);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(70, 15);
             this.label16.TabIndex = 7;
@@ -1004,7 +1009,7 @@
             // tab2Model
             // 
             this.tab2Model.Hexadecimal = true;
-            this.tab2Model.Location = new System.Drawing.Point(314, 128);
+            this.tab2Model.Location = new System.Drawing.Point(366, 158);
             this.tab2Model.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1019,7 +1024,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label15.Location = new System.Drawing.Point(317, 110);
+            this.label15.Location = new System.Drawing.Point(369, 140);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(58, 15);
             this.label15.TabIndex = 5;
@@ -1072,7 +1077,7 @@
             "Ada\'s Bowgun",
             "Ada\'s Shotgun",
             "Ada\'s Chicago"});
-            this.tab2CbWeapons.Location = new System.Drawing.Point(288, 45);
+            this.tab2CbWeapons.Location = new System.Drawing.Point(340, 75);
             this.tab2CbWeapons.Name = "tab2CbWeapons";
             this.tab2CbWeapons.Size = new System.Drawing.Size(233, 23);
             this.tab2CbWeapons.TabIndex = 4;
@@ -1081,7 +1086,7 @@
             // tab2WeaponID
             // 
             this.tab2WeaponID.Hexadecimal = true;
-            this.tab2WeaponID.Location = new System.Drawing.Point(222, 128);
+            this.tab2WeaponID.Location = new System.Drawing.Point(274, 158);
             this.tab2WeaponID.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1096,7 +1101,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label14.Location = new System.Drawing.Point(222, 110);
+            this.label14.Location = new System.Drawing.Point(274, 140);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 15);
             this.label14.TabIndex = 2;
@@ -1123,7 +1128,7 @@
             this.tabPage2.Controls.Add(this.tab3CbDamage);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(885, 323);
+            this.tabPage2.Size = new System.Drawing.Size(885, 404);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Weapons Damage";
             // 
@@ -1131,7 +1136,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label32.Location = new System.Drawing.Point(362, 41);
+            this.label32.Location = new System.Drawing.Point(409, 75);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(86, 15);
             this.label32.TabIndex = 31;
@@ -1140,7 +1145,7 @@
             // tab3Damage7
             // 
             this.tab3Damage7.DecimalPlaces = 1;
-            this.tab3Damage7.Location = new System.Drawing.Point(412, 249);
+            this.tab3Damage7.Location = new System.Drawing.Point(459, 283);
             this.tab3Damage7.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1155,7 +1160,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label30.Location = new System.Drawing.Point(415, 231);
+            this.label30.Location = new System.Drawing.Point(462, 265);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(60, 15);
             this.label30.TabIndex = 29;
@@ -1164,7 +1169,7 @@
             // tab3Damage6
             // 
             this.tab3Damage6.DecimalPlaces = 1;
-            this.tab3Damage6.Location = new System.Drawing.Point(320, 249);
+            this.tab3Damage6.Location = new System.Drawing.Point(367, 283);
             this.tab3Damage6.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1179,7 +1184,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label31.Location = new System.Drawing.Point(323, 231);
+            this.label31.Location = new System.Drawing.Point(370, 265);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(60, 15);
             this.label31.TabIndex = 27;
@@ -1188,7 +1193,7 @@
             // tab3Damage5
             // 
             this.tab3Damage5.DecimalPlaces = 1;
-            this.tab3Damage5.Location = new System.Drawing.Point(558, 177);
+            this.tab3Damage5.Location = new System.Drawing.Point(605, 211);
             this.tab3Damage5.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1203,7 +1208,7 @@
             // 
             this.label29.AutoSize = true;
             this.label29.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label29.Location = new System.Drawing.Point(561, 159);
+            this.label29.Location = new System.Drawing.Point(608, 193);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(60, 15);
             this.label29.TabIndex = 25;
@@ -1212,7 +1217,7 @@
             // tab3Damage4
             // 
             this.tab3Damage4.DecimalPlaces = 1;
-            this.tab3Damage4.Location = new System.Drawing.Point(465, 177);
+            this.tab3Damage4.Location = new System.Drawing.Point(512, 211);
             this.tab3Damage4.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1227,7 +1232,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label27.Location = new System.Drawing.Point(468, 159);
+            this.label27.Location = new System.Drawing.Point(515, 193);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(60, 15);
             this.label27.TabIndex = 23;
@@ -1236,7 +1241,7 @@
             // tab3Damage3
             // 
             this.tab3Damage3.DecimalPlaces = 1;
-            this.tab3Damage3.Location = new System.Drawing.Point(373, 177);
+            this.tab3Damage3.Location = new System.Drawing.Point(420, 211);
             this.tab3Damage3.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1251,7 +1256,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label28.Location = new System.Drawing.Point(376, 159);
+            this.label28.Location = new System.Drawing.Point(423, 193);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(60, 15);
             this.label28.TabIndex = 21;
@@ -1260,7 +1265,7 @@
             // tab3Damage2
             // 
             this.tab3Damage2.DecimalPlaces = 1;
-            this.tab3Damage2.Location = new System.Drawing.Point(279, 177);
+            this.tab3Damage2.Location = new System.Drawing.Point(326, 211);
             this.tab3Damage2.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1275,7 +1280,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label26.Location = new System.Drawing.Point(282, 159);
+            this.label26.Location = new System.Drawing.Point(329, 193);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(60, 15);
             this.label26.TabIndex = 19;
@@ -1284,7 +1289,7 @@
             // tab3Damage1
             // 
             this.tab3Damage1.DecimalPlaces = 1;
-            this.tab3Damage1.Location = new System.Drawing.Point(187, 177);
+            this.tab3Damage1.Location = new System.Drawing.Point(234, 211);
             this.tab3Damage1.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1299,7 +1304,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(190, 159);
+            this.label17.Location = new System.Drawing.Point(237, 193);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 15);
             this.label17.TabIndex = 17;
@@ -1326,7 +1331,7 @@
             "Handcannon",
             "Matilda",
             "Riotgun"});
-            this.tab3CbDamage.Location = new System.Drawing.Point(288, 63);
+            this.tab3CbDamage.Location = new System.Drawing.Point(335, 97);
             this.tab3CbDamage.Name = "tab3CbDamage";
             this.tab3CbDamage.Size = new System.Drawing.Size(233, 23);
             this.tab3CbDamage.TabIndex = 5;
@@ -1345,7 +1350,7 @@
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(885, 323);
+            this.tabPage3.Size = new System.Drawing.Size(885, 404);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Weapons Reload";
             // 
@@ -1353,7 +1358,7 @@
             // 
             this.label37.AutoSize = true;
             this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label37.Location = new System.Drawing.Point(364, 42);
+            this.label37.Location = new System.Drawing.Point(420, 99);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(86, 15);
             this.label37.TabIndex = 33;
@@ -1382,7 +1387,7 @@
             "Matilda",
             "Riotgun",
             "AdaBowgun"});
-            this.tab4CbReloadSpeed.Location = new System.Drawing.Point(290, 64);
+            this.tab4CbReloadSpeed.Location = new System.Drawing.Point(346, 121);
             this.tab4CbReloadSpeed.Name = "tab4CbReloadSpeed";
             this.tab4CbReloadSpeed.Size = new System.Drawing.Size(233, 23);
             this.tab4CbReloadSpeed.TabIndex = 32;
@@ -1391,7 +1396,7 @@
             // tab4Reload3
             // 
             this.tab4Reload3.DecimalPlaces = 2;
-            this.tab4Reload3.Location = new System.Drawing.Point(491, 170);
+            this.tab4Reload3.Location = new System.Drawing.Point(547, 227);
             this.tab4Reload3.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1406,7 +1411,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label36.Location = new System.Drawing.Point(491, 152);
+            this.label36.Location = new System.Drawing.Point(547, 209);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(87, 15);
             this.label36.TabIndex = 25;
@@ -1415,7 +1420,7 @@
             // tab4Reload2
             // 
             this.tab4Reload2.DecimalPlaces = 2;
-            this.tab4Reload2.Location = new System.Drawing.Point(362, 170);
+            this.tab4Reload2.Location = new System.Drawing.Point(418, 227);
             this.tab4Reload2.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1430,7 +1435,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label35.Location = new System.Drawing.Point(362, 152);
+            this.label35.Location = new System.Drawing.Point(418, 209);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(87, 15);
             this.label35.TabIndex = 23;
@@ -1439,7 +1444,7 @@
             // tab4Reload1
             // 
             this.tab4Reload1.DecimalPlaces = 2;
-            this.tab4Reload1.Location = new System.Drawing.Point(235, 170);
+            this.tab4Reload1.Location = new System.Drawing.Point(291, 227);
             this.tab4Reload1.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1454,7 +1459,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label34.Location = new System.Drawing.Point(235, 152);
+            this.label34.Location = new System.Drawing.Point(291, 209);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(87, 15);
             this.label34.TabIndex = 21;
@@ -1477,14 +1482,14 @@
             this.tabPage4.Controls.Add(this.label41);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(885, 323);
+            this.tabPage4.Size = new System.Drawing.Size(885, 404);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Weapons Firing";
             // 
             // tab5Firing5
             // 
             this.tab5Firing5.DecimalPlaces = 2;
-            this.tab5Firing5.Location = new System.Drawing.Point(444, 249);
+            this.tab5Firing5.Location = new System.Drawing.Point(488, 276);
             this.tab5Firing5.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1499,7 +1504,7 @@
             // 
             this.label42.AutoSize = true;
             this.label42.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label42.Location = new System.Drawing.Point(447, 231);
+            this.label42.Location = new System.Drawing.Point(491, 258);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(81, 15);
             this.label42.TabIndex = 44;
@@ -1508,7 +1513,7 @@
             // tab5Firing4
             // 
             this.tab5Firing4.DecimalPlaces = 2;
-            this.tab5Firing4.Location = new System.Drawing.Point(317, 249);
+            this.tab5Firing4.Location = new System.Drawing.Point(361, 276);
             this.tab5Firing4.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1523,7 +1528,7 @@
             // 
             this.label43.AutoSize = true;
             this.label43.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label43.Location = new System.Drawing.Point(320, 231);
+            this.label43.Location = new System.Drawing.Point(364, 258);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(81, 15);
             this.label43.TabIndex = 42;
@@ -1533,7 +1538,7 @@
             // 
             this.label38.AutoSize = true;
             this.label38.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label38.Location = new System.Drawing.Point(372, 46);
+            this.label38.Location = new System.Drawing.Point(416, 73);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(86, 15);
             this.label38.TabIndex = 41;
@@ -1561,7 +1566,7 @@
             "Handcannon",
             "Riotgun",
             "AdaBowgun"});
-            this.tab5CbFiringSpeed.Location = new System.Drawing.Point(298, 68);
+            this.tab5CbFiringSpeed.Location = new System.Drawing.Point(342, 95);
             this.tab5CbFiringSpeed.Name = "tab5CbFiringSpeed";
             this.tab5CbFiringSpeed.Size = new System.Drawing.Size(233, 23);
             this.tab5CbFiringSpeed.TabIndex = 40;
@@ -1570,7 +1575,7 @@
             // tab5Firing3
             // 
             this.tab5Firing3.DecimalPlaces = 2;
-            this.tab5Firing3.Location = new System.Drawing.Point(499, 182);
+            this.tab5Firing3.Location = new System.Drawing.Point(543, 209);
             this.tab5Firing3.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1585,7 +1590,7 @@
             // 
             this.label39.AutoSize = true;
             this.label39.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label39.Location = new System.Drawing.Point(502, 164);
+            this.label39.Location = new System.Drawing.Point(546, 191);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(81, 15);
             this.label39.TabIndex = 38;
@@ -1594,7 +1599,7 @@
             // tab5Firing2
             // 
             this.tab5Firing2.DecimalPlaces = 2;
-            this.tab5Firing2.Location = new System.Drawing.Point(370, 182);
+            this.tab5Firing2.Location = new System.Drawing.Point(414, 209);
             this.tab5Firing2.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1609,7 +1614,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label40.Location = new System.Drawing.Point(373, 164);
+            this.label40.Location = new System.Drawing.Point(417, 191);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(81, 15);
             this.label40.TabIndex = 36;
@@ -1618,7 +1623,7 @@
             // tab5Firing1
             // 
             this.tab5Firing1.DecimalPlaces = 2;
-            this.tab5Firing1.Location = new System.Drawing.Point(243, 182);
+            this.tab5Firing1.Location = new System.Drawing.Point(287, 209);
             this.tab5Firing1.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1633,7 +1638,7 @@
             // 
             this.label41.AutoSize = true;
             this.label41.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label41.Location = new System.Drawing.Point(246, 164);
+            this.label41.Location = new System.Drawing.Point(290, 191);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(81, 15);
             this.label41.TabIndex = 34;
@@ -1656,13 +1661,13 @@
             this.tabPage5.Controls.Add(this.label49);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(885, 323);
+            this.tabPage5.Size = new System.Drawing.Size(885, 404);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Upgrades Available";
             // 
             // tab6Capacity
             // 
-            this.tab6Capacity.Location = new System.Drawing.Point(443, 251);
+            this.tab6Capacity.Location = new System.Drawing.Point(499, 278);
             this.tab6Capacity.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1677,7 +1682,7 @@
             // 
             this.label44.AutoSize = true;
             this.label44.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label44.Location = new System.Drawing.Point(461, 233);
+            this.label44.Location = new System.Drawing.Point(517, 260);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(53, 15);
             this.label44.TabIndex = 56;
@@ -1685,7 +1690,7 @@
             // 
             // tab6ReloadSpeed
             // 
-            this.tab6ReloadSpeed.Location = new System.Drawing.Point(316, 251);
+            this.tab6ReloadSpeed.Location = new System.Drawing.Point(372, 278);
             this.tab6ReloadSpeed.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1700,7 +1705,7 @@
             // 
             this.label45.AutoSize = true;
             this.label45.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label45.Location = new System.Drawing.Point(321, 233);
+            this.label45.Location = new System.Drawing.Point(377, 260);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(78, 15);
             this.label45.TabIndex = 54;
@@ -1710,7 +1715,7 @@
             // 
             this.label46.AutoSize = true;
             this.label46.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label46.Location = new System.Drawing.Point(371, 48);
+            this.label46.Location = new System.Drawing.Point(427, 75);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(86, 15);
             this.label46.TabIndex = 53;
@@ -1752,7 +1757,7 @@
             "Ada\'s Chicago",
             "P.R.L",
             "P.R.L w/ Scope"});
-            this.tab6CbUpgrades.Location = new System.Drawing.Point(297, 70);
+            this.tab6CbUpgrades.Location = new System.Drawing.Point(353, 97);
             this.tab6CbUpgrades.Name = "tab6CbUpgrades";
             this.tab6CbUpgrades.Size = new System.Drawing.Size(233, 23);
             this.tab6CbUpgrades.TabIndex = 52;
@@ -1760,7 +1765,7 @@
             // 
             // tab6FiringSpeed
             // 
-            this.tab6FiringSpeed.Location = new System.Drawing.Point(498, 184);
+            this.tab6FiringSpeed.Location = new System.Drawing.Point(554, 211);
             this.tab6FiringSpeed.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1775,7 +1780,7 @@
             // 
             this.label47.AutoSize = true;
             this.label47.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label47.Location = new System.Drawing.Point(506, 166);
+            this.label47.Location = new System.Drawing.Point(562, 193);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(72, 15);
             this.label47.TabIndex = 50;
@@ -1783,7 +1788,7 @@
             // 
             // tab6Firepower
             // 
-            this.tab6Firepower.Location = new System.Drawing.Point(369, 184);
+            this.tab6Firepower.Location = new System.Drawing.Point(425, 211);
             this.tab6Firepower.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1798,7 +1803,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label48.Location = new System.Drawing.Point(384, 166);
+            this.label48.Location = new System.Drawing.Point(440, 193);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(59, 15);
             this.label48.TabIndex = 48;
@@ -1807,7 +1812,7 @@
             // tab6WeaponID
             // 
             this.tab6WeaponID.Hexadecimal = true;
-            this.tab6WeaponID.Location = new System.Drawing.Point(242, 184);
+            this.tab6WeaponID.Location = new System.Drawing.Point(298, 211);
             this.tab6WeaponID.Maximum = new decimal(new int[] {
             65000,
             0,
@@ -1823,7 +1828,7 @@
             // 
             this.label49.AutoSize = true;
             this.label49.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label49.Location = new System.Drawing.Point(253, 166);
+            this.label49.Location = new System.Drawing.Point(309, 193);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(65, 15);
             this.label49.TabIndex = 46;
@@ -1843,7 +1848,7 @@
             this.tabPage6.Controls.Add(this.label51);
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(885, 323);
+            this.tabPage6.Size = new System.Drawing.Size(885, 404);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Merchant Prices";
             // 
@@ -1852,7 +1857,7 @@
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label54.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label54.Location = new System.Drawing.Point(327, 243);
+            this.label54.Location = new System.Drawing.Point(369, 262);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(209, 15);
             this.label54.TabIndex = 62;
@@ -1861,7 +1866,7 @@
             // tab7WeaponID
             // 
             this.tab7WeaponID.Hexadecimal = true;
-            this.tab7WeaponID.Location = new System.Drawing.Point(208, 176);
+            this.tab7WeaponID.Location = new System.Drawing.Point(250, 195);
             this.tab7WeaponID.Maximum = new decimal(new int[] {
             32000,
             0,
@@ -1877,7 +1882,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label53.Location = new System.Drawing.Point(239, 158);
+            this.label53.Location = new System.Drawing.Point(281, 177);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(45, 15);
             this.label53.TabIndex = 60;
@@ -1885,7 +1890,7 @@
             // 
             // tab7Quantity
             // 
-            this.tab7Quantity.Location = new System.Drawing.Point(525, 176);
+            this.tab7Quantity.Location = new System.Drawing.Point(567, 195);
             this.tab7Quantity.Maximum = new decimal(new int[] {
             32000,
             0,
@@ -1900,7 +1905,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label52.Location = new System.Drawing.Point(520, 158);
+            this.label52.Location = new System.Drawing.Point(562, 177);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(124, 15);
             this.label52.TabIndex = 58;
@@ -1910,7 +1915,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label50.Location = new System.Drawing.Point(391, 65);
+            this.label50.Location = new System.Drawing.Point(433, 84);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(66, 15);
             this.label50.TabIndex = 57;
@@ -1996,7 +2001,7 @@
             "Catseye Red",
             "Catseye Yellow",
             "Beerstein"});
-            this.tab7CbMerchantPrices.Location = new System.Drawing.Point(308, 87);
+            this.tab7CbMerchantPrices.Location = new System.Drawing.Point(350, 106);
             this.tab7CbMerchantPrices.Name = "tab7CbMerchantPrices";
             this.tab7CbMerchantPrices.Size = new System.Drawing.Size(233, 23);
             this.tab7CbMerchantPrices.TabIndex = 56;
@@ -2004,7 +2009,7 @@
             // 
             // tab7PriceBox
             // 
-            this.tab7PriceBox.Location = new System.Drawing.Point(367, 176);
+            this.tab7PriceBox.Location = new System.Drawing.Point(409, 195);
             this.tab7PriceBox.Maximum = new decimal(new int[] {
             3200000,
             0,
@@ -2024,7 +2029,7 @@
             // 
             this.label51.AutoSize = true;
             this.label51.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label51.Location = new System.Drawing.Point(388, 158);
+            this.label51.Location = new System.Drawing.Point(430, 177);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(73, 15);
             this.label51.TabIndex = 54;
@@ -2032,12 +2037,52 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.AutoScroll = true;
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage7.Controls.Add(this.tab8CbMerchant);
+            this.tabPage7.Controls.Add(this.label62);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(885, 323);
+            this.tabPage7.Size = new System.Drawing.Size(885, 404);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Merchant Stock";
+            // 
+            // tab8CbMerchant
+            // 
+            this.tab8CbMerchant.BackColor = System.Drawing.SystemColors.Window;
+            this.tab8CbMerchant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tab8CbMerchant.FormattingEnabled = true;
+            this.tab8CbMerchant.Items.AddRange(new object[] {
+            "Merchant 1",
+            "Merchant 2",
+            "Merchant 3",
+            "Merchant 4",
+            "Merchant 5",
+            "Merchant 6",
+            "Merchant 7",
+            "Merchant 8",
+            "Merchant 9",
+            "Merchant 10",
+            "Merchant 11",
+            "Merchant 12",
+            "Merchant 13",
+            "Merchant 14",
+            "Merchant 15 (Unlockables)"});
+            this.tab8CbMerchant.Location = new System.Drawing.Point(337, 57);
+            this.tab8CbMerchant.Name = "tab8CbMerchant";
+            this.tab8CbMerchant.Size = new System.Drawing.Size(233, 23);
+            this.tab8CbMerchant.TabIndex = 60;
+            this.tab8CbMerchant.SelectedIndexChanged += new System.EventHandler(this.tab8CbMerchant_SelectedIndexChanged);
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label62.Location = new System.Drawing.Point(425, 39);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(58, 15);
+            this.label62.TabIndex = 59;
+            this.label62.Text = "Merchant";
             // 
             // tabPage8
             // 
@@ -2062,7 +2107,7 @@
             this.tabPage8.Controls.Add(this.label58);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(885, 323);
+            this.tabPage8.Size = new System.Drawing.Size(885, 404);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "Items Slots";
             // 
@@ -2338,7 +2383,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.optionsToolStripMenuItem,
             this.contibuteToolStripMenuItem,
             this.creditsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -2397,7 +2441,8 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.extractELFToolStripMenuItem,
-            this.nullAllValuesToolStripMenuItem,
+            this.importCustomELFToolStripMenuItem,
+            this.toolStripSeparator3,
             this.defaultValuesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
@@ -2407,32 +2452,30 @@
             // 
             this.extractELFToolStripMenuItem.Name = "extractELFToolStripMenuItem";
             this.extractELFToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.extractELFToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.extractELFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.extractELFToolStripMenuItem.Text = "Extract ELF";
             this.extractELFToolStripMenuItem.Click += new System.EventHandler(this.extractELFToolStripMenuItem_Click);
             // 
-            // nullAllValuesToolStripMenuItem
+            // importCustomELFToolStripMenuItem
             // 
-            this.nullAllValuesToolStripMenuItem.Name = "nullAllValuesToolStripMenuItem";
-            this.nullAllValuesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.nullAllValuesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.nullAllValuesToolStripMenuItem.Text = "Null values";
-            this.nullAllValuesToolStripMenuItem.Click += new System.EventHandler(this.nullAllValuesToolStripMenuItem_Click);
+            this.importCustomELFToolStripMenuItem.Name = "importCustomELFToolStripMenuItem";
+            this.importCustomELFToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.I)));
+            this.importCustomELFToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.importCustomELFToolStripMenuItem.Text = "Import custom ELF";
+            this.importCustomELFToolStripMenuItem.Click += new System.EventHandler(this.importCustomELFToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
             // 
             // defaultValuesToolStripMenuItem
             // 
             this.defaultValuesToolStripMenuItem.Name = "defaultValuesToolStripMenuItem";
             this.defaultValuesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.defaultValuesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.defaultValuesToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.defaultValuesToolStripMenuItem.Text = "Default values";
             this.defaultValuesToolStripMenuItem.Click += new System.EventHandler(this.defaultValuesToolStripMenuItem_Click);
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Enabled = false;
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
             // 
             // contibuteToolStripMenuItem
             // 
@@ -2460,7 +2503,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 450);
+            this.ClientSize = new System.Drawing.Size(892, 531);
             this.Controls.Add(this.mainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -2534,6 +2577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tab7WeaponID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab7Quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab7PriceBox)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab9YCoordinate)).EndInit();
@@ -2582,12 +2627,10 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem saveFileToolStripMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem contibuteToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem extractELFToolStripMenuItem;
-        private ToolStripMenuItem nullAllValuesToolStripMenuItem;
         private ToolStripMenuItem rEModdingForumToolStripMenuItem;
         private ToolStripMenuItem defaultValuesToolStripMenuItem;
         private Label lblRegion;
@@ -2710,5 +2753,9 @@
         private Label label63;
         private Label tab9VerticalLabel;
         private Label tab9HorizontalLabel;
+        private ComboBox tab8CbMerchant;
+        private Label label62;
+        private ToolStripMenuItem importCustomELFToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }
