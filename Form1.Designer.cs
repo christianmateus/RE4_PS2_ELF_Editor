@@ -160,6 +160,43 @@ namespace ELFeditor
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tab8CbMerchant = new System.Windows.Forms.ComboBox();
             this.label62 = new System.Windows.Forms.Label();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tab10Capacity6 = new System.Windows.Forms.NumericUpDown();
+            this.label80 = new System.Windows.Forms.Label();
+            this.tab10Firepower6 = new System.Windows.Forms.NumericUpDown();
+            this.label81 = new System.Windows.Forms.Label();
+            this.tab10Capacity5 = new System.Windows.Forms.NumericUpDown();
+            this.label76 = new System.Windows.Forms.Label();
+            this.tab10Firepower5 = new System.Windows.Forms.NumericUpDown();
+            this.label77 = new System.Windows.Forms.Label();
+            this.tab10Capacity4 = new System.Windows.Forms.NumericUpDown();
+            this.label75 = new System.Windows.Forms.Label();
+            this.tab10Firepower4 = new System.Windows.Forms.NumericUpDown();
+            this.label78 = new System.Windows.Forms.Label();
+            this.tab10Capacity3 = new System.Windows.Forms.NumericUpDown();
+            this.label79 = new System.Windows.Forms.Label();
+            this.tab10Firepower3 = new System.Windows.Forms.NumericUpDown();
+            this.label82 = new System.Windows.Forms.Label();
+            this.tab10Capacity2 = new System.Windows.Forms.NumericUpDown();
+            this.label71 = new System.Windows.Forms.Label();
+            this.tab10Reload2 = new System.Windows.Forms.NumericUpDown();
+            this.label72 = new System.Windows.Forms.Label();
+            this.tab10Firing2 = new System.Windows.Forms.NumericUpDown();
+            this.label73 = new System.Windows.Forms.Label();
+            this.tab10Firepower2 = new System.Windows.Forms.NumericUpDown();
+            this.label74 = new System.Windows.Forms.Label();
+            this.tab10Capacity1 = new System.Windows.Forms.NumericUpDown();
+            this.label65 = new System.Windows.Forms.Label();
+            this.tab10Reload1 = new System.Windows.Forms.NumericUpDown();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.tab10CbMerchantUpgrades = new System.Windows.Forms.ComboBox();
+            this.tab10Firing1 = new System.Windows.Forms.NumericUpDown();
+            this.label68 = new System.Windows.Forms.Label();
+            this.tab10Firepower1 = new System.Windows.Forms.NumericUpDown();
+            this.label69 = new System.Windows.Forms.Label();
+            this.tab10WeaponID = new System.Windows.Forms.NumericUpDown();
+            this.label70 = new System.Windows.Forms.Label();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label61 = new System.Windows.Forms.Label();
             this.tab9Result = new System.Windows.Forms.Label();
@@ -255,6 +292,24 @@ namespace ELFeditor
             ((System.ComponentModel.ISupportInitialize)(this.tab7Quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab7PriceBox)).BeginInit();
             this.tabPage7.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Reload2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firing2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Reload1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firing1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10WeaponID)).BeginInit();
             this.tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab9YCoordinate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tab9XCoordinate)).BeginInit();
@@ -276,7 +331,7 @@ namespace ELFeditor
             this.mainPanel.Controls.Add(this.menuStrip1);
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(893, 531);
+            this.mainPanel.Size = new System.Drawing.Size(893, 587);
             this.mainPanel.TabIndex = 0;
             // 
             // lblRegion
@@ -318,11 +373,12 @@ namespace ELFeditor
             this.mainForm.Controls.Add(this.tabPage5);
             this.mainForm.Controls.Add(this.tabPage6);
             this.mainForm.Controls.Add(this.tabPage7);
+            this.mainForm.Controls.Add(this.tabPage9);
             this.mainForm.Controls.Add(this.tabPage8);
             this.mainForm.Location = new System.Drawing.Point(0, 99);
             this.mainForm.Name = "mainForm";
             this.mainForm.SelectedIndex = 0;
-            this.mainForm.Size = new System.Drawing.Size(893, 432);
+            this.mainForm.Size = new System.Drawing.Size(893, 488);
             this.mainForm.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.mainForm.TabIndex = 0;
             // 
@@ -367,7 +423,7 @@ namespace ELFeditor
             this.acumulatorForm.Location = new System.Drawing.Point(4, 24);
             this.acumulatorForm.Name = "acumulatorForm";
             this.acumulatorForm.Padding = new System.Windows.Forms.Padding(3);
-            this.acumulatorForm.Size = new System.Drawing.Size(885, 404);
+            this.acumulatorForm.Size = new System.Drawing.Size(885, 460);
             this.acumulatorForm.TabIndex = 0;
             this.acumulatorForm.Text = "Acumulator";
             // 
@@ -784,7 +840,7 @@ namespace ELFeditor
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(885, 404);
+            this.tabPage1.Size = new System.Drawing.Size(885, 460);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Weapons Capacity";
             // 
@@ -1128,7 +1184,7 @@ namespace ELFeditor
             this.tabPage2.Controls.Add(this.tab3CbDamage);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(885, 404);
+            this.tabPage2.Size = new System.Drawing.Size(885, 460);
             this.tabPage2.TabIndex = 2;
             this.tabPage2.Text = "Weapons Damage";
             // 
@@ -1350,7 +1406,7 @@ namespace ELFeditor
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(885, 404);
+            this.tabPage3.Size = new System.Drawing.Size(885, 460);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Weapons Reload";
             // 
@@ -1482,7 +1538,7 @@ namespace ELFeditor
             this.tabPage4.Controls.Add(this.label41);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(885, 404);
+            this.tabPage4.Size = new System.Drawing.Size(885, 460);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Weapons Firing";
             // 
@@ -1661,7 +1717,7 @@ namespace ELFeditor
             this.tabPage5.Controls.Add(this.label49);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(885, 404);
+            this.tabPage5.Size = new System.Drawing.Size(885, 460);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Upgrades Available";
             // 
@@ -1848,7 +1904,7 @@ namespace ELFeditor
             this.tabPage6.Controls.Add(this.label51);
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(885, 404);
+            this.tabPage6.Size = new System.Drawing.Size(885, 460);
             this.tabPage6.TabIndex = 6;
             this.tabPage6.Text = "Merchant Prices";
             // 
@@ -1859,9 +1915,9 @@ namespace ELFeditor
             this.label54.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label54.Location = new System.Drawing.Point(369, 262);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(209, 15);
+            this.label54.Size = new System.Drawing.Size(215, 15);
             this.label54.TabIndex = 62;
-            this.label54.Text = "Note: -10 means it\'s free (0xFFFF int16)";
+            this.label54.Text = "Note: -10 means 1 million (0xFFFF int16)";
             // 
             // tab7WeaponID
             // 
@@ -2043,7 +2099,7 @@ namespace ELFeditor
             this.tabPage7.Controls.Add(this.label62);
             this.tabPage7.Location = new System.Drawing.Point(4, 24);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(885, 404);
+            this.tabPage7.Size = new System.Drawing.Size(885, 460);
             this.tabPage7.TabIndex = 7;
             this.tabPage7.Text = "Merchant Stock";
             // 
@@ -2084,6 +2140,563 @@ namespace ELFeditor
             this.label62.TabIndex = 59;
             this.label62.Text = "Merchant";
             // 
+            // tabPage9
+            // 
+            this.tabPage9.AutoScroll = true;
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage9.Controls.Add(this.tab10Capacity6);
+            this.tabPage9.Controls.Add(this.label80);
+            this.tabPage9.Controls.Add(this.tab10Firepower6);
+            this.tabPage9.Controls.Add(this.label81);
+            this.tabPage9.Controls.Add(this.tab10Capacity5);
+            this.tabPage9.Controls.Add(this.label76);
+            this.tabPage9.Controls.Add(this.tab10Firepower5);
+            this.tabPage9.Controls.Add(this.label77);
+            this.tabPage9.Controls.Add(this.tab10Capacity4);
+            this.tabPage9.Controls.Add(this.label75);
+            this.tabPage9.Controls.Add(this.tab10Firepower4);
+            this.tabPage9.Controls.Add(this.label78);
+            this.tabPage9.Controls.Add(this.tab10Capacity3);
+            this.tabPage9.Controls.Add(this.label79);
+            this.tabPage9.Controls.Add(this.tab10Firepower3);
+            this.tabPage9.Controls.Add(this.label82);
+            this.tabPage9.Controls.Add(this.tab10Capacity2);
+            this.tabPage9.Controls.Add(this.label71);
+            this.tabPage9.Controls.Add(this.tab10Reload2);
+            this.tabPage9.Controls.Add(this.label72);
+            this.tabPage9.Controls.Add(this.tab10Firing2);
+            this.tabPage9.Controls.Add(this.label73);
+            this.tabPage9.Controls.Add(this.tab10Firepower2);
+            this.tabPage9.Controls.Add(this.label74);
+            this.tabPage9.Controls.Add(this.tab10Capacity1);
+            this.tabPage9.Controls.Add(this.label65);
+            this.tabPage9.Controls.Add(this.tab10Reload1);
+            this.tabPage9.Controls.Add(this.label66);
+            this.tabPage9.Controls.Add(this.label67);
+            this.tabPage9.Controls.Add(this.tab10CbMerchantUpgrades);
+            this.tabPage9.Controls.Add(this.tab10Firing1);
+            this.tabPage9.Controls.Add(this.label68);
+            this.tabPage9.Controls.Add(this.tab10Firepower1);
+            this.tabPage9.Controls.Add(this.label69);
+            this.tabPage9.Controls.Add(this.tab10WeaponID);
+            this.tabPage9.Controls.Add(this.label70);
+            this.tabPage9.Location = new System.Drawing.Point(4, 24);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Size = new System.Drawing.Size(885, 460);
+            this.tabPage9.TabIndex = 9;
+            this.tabPage9.Text = "Merchant Upgrades Prices";
+            // 
+            // tab10Capacity6
+            // 
+            this.tab10Capacity6.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity6.Location = new System.Drawing.Point(666, 406);
+            this.tab10Capacity6.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity6.Name = "tab10Capacity6";
+            this.tab10Capacity6.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity6.TabIndex = 101;
+            this.tab10Capacity6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label80.Location = new System.Drawing.Point(657, 388);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(104, 15);
+            this.label80.TabIndex = 100;
+            this.label80.Text = "Capacity Exclusive";
+            // 
+            // tab10Firepower6
+            // 
+            this.tab10Firepower6.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower6.Location = new System.Drawing.Point(280, 406);
+            this.tab10Firepower6.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower6.Name = "tab10Firepower6";
+            this.tab10Firepower6.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower6.TabIndex = 99;
+            this.tab10Firepower6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label81.Location = new System.Drawing.Point(268, 388);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(110, 15);
+            this.label81.TabIndex = 98;
+            this.label81.Text = "Firepower Exclusive";
+            // 
+            // tab10Capacity5
+            // 
+            this.tab10Capacity5.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity5.Location = new System.Drawing.Point(666, 351);
+            this.tab10Capacity5.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity5.Name = "tab10Capacity5";
+            this.tab10Capacity5.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity5.TabIndex = 97;
+            this.tab10Capacity5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label76.Location = new System.Drawing.Point(680, 333);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(62, 15);
+            this.label76.TabIndex = 96;
+            this.label76.Text = "Capacity 5";
+            // 
+            // tab10Firepower5
+            // 
+            this.tab10Firepower5.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower5.Location = new System.Drawing.Point(280, 351);
+            this.tab10Firepower5.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower5.Name = "tab10Firepower5";
+            this.tab10Firepower5.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower5.TabIndex = 95;
+            this.tab10Firepower5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label77.Location = new System.Drawing.Point(291, 333);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(68, 15);
+            this.label77.TabIndex = 94;
+            this.label77.Text = "Firepower 5";
+            // 
+            // tab10Capacity4
+            // 
+            this.tab10Capacity4.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity4.Location = new System.Drawing.Point(666, 296);
+            this.tab10Capacity4.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity4.Name = "tab10Capacity4";
+            this.tab10Capacity4.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity4.TabIndex = 93;
+            this.tab10Capacity4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label75.Location = new System.Drawing.Point(680, 278);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(62, 15);
+            this.label75.TabIndex = 92;
+            this.label75.Text = "Capacity 4";
+            // 
+            // tab10Firepower4
+            // 
+            this.tab10Firepower4.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower4.Location = new System.Drawing.Point(280, 296);
+            this.tab10Firepower4.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower4.Name = "tab10Firepower4";
+            this.tab10Firepower4.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower4.TabIndex = 87;
+            this.tab10Firepower4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label78.Location = new System.Drawing.Point(291, 278);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(68, 15);
+            this.label78.TabIndex = 86;
+            this.label78.Text = "Firepower 4";
+            // 
+            // tab10Capacity3
+            // 
+            this.tab10Capacity3.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity3.Location = new System.Drawing.Point(666, 242);
+            this.tab10Capacity3.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity3.Name = "tab10Capacity3";
+            this.tab10Capacity3.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity3.TabIndex = 85;
+            this.tab10Capacity3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label79.Location = new System.Drawing.Point(680, 224);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(62, 15);
+            this.label79.TabIndex = 84;
+            this.label79.Text = "Capacity 3";
+            // 
+            // tab10Firepower3
+            // 
+            this.tab10Firepower3.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower3.Location = new System.Drawing.Point(280, 242);
+            this.tab10Firepower3.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower3.Name = "tab10Firepower3";
+            this.tab10Firepower3.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower3.TabIndex = 79;
+            this.tab10Firepower3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label82.Location = new System.Drawing.Point(291, 224);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(68, 15);
+            this.label82.TabIndex = 78;
+            this.label82.Text = "Firepower 3";
+            // 
+            // tab10Capacity2
+            // 
+            this.tab10Capacity2.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity2.Location = new System.Drawing.Point(666, 186);
+            this.tab10Capacity2.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity2.Name = "tab10Capacity2";
+            this.tab10Capacity2.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity2.TabIndex = 77;
+            this.tab10Capacity2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label71.Location = new System.Drawing.Point(680, 168);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(62, 15);
+            this.label71.TabIndex = 76;
+            this.label71.Text = "Capacity 2";
+            // 
+            // tab10Reload2
+            // 
+            this.tab10Reload2.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Reload2.Location = new System.Drawing.Point(539, 186);
+            this.tab10Reload2.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Reload2.Name = "tab10Reload2";
+            this.tab10Reload2.Size = new System.Drawing.Size(88, 23);
+            this.tab10Reload2.TabIndex = 75;
+            this.tab10Reload2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label72.Location = new System.Drawing.Point(540, 168);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(87, 15);
+            this.label72.TabIndex = 74;
+            this.label72.Text = "Reload Speed 2";
+            // 
+            // tab10Firing2
+            // 
+            this.tab10Firing2.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firing2.Location = new System.Drawing.Point(409, 186);
+            this.tab10Firing2.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firing2.Name = "tab10Firing2";
+            this.tab10Firing2.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firing2.TabIndex = 73;
+            this.tab10Firing2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label73.Location = new System.Drawing.Point(413, 168);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(81, 15);
+            this.label73.TabIndex = 72;
+            this.label73.Text = "Firing Speed 2";
+            // 
+            // tab10Firepower2
+            // 
+            this.tab10Firepower2.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower2.Location = new System.Drawing.Point(280, 186);
+            this.tab10Firepower2.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower2.Name = "tab10Firepower2";
+            this.tab10Firepower2.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower2.TabIndex = 71;
+            this.tab10Firepower2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label74.Location = new System.Drawing.Point(291, 168);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(68, 15);
+            this.label74.TabIndex = 70;
+            this.label74.Text = "Firepower 2";
+            // 
+            // tab10Capacity1
+            // 
+            this.tab10Capacity1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Capacity1.Location = new System.Drawing.Point(666, 132);
+            this.tab10Capacity1.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Capacity1.Name = "tab10Capacity1";
+            this.tab10Capacity1.Size = new System.Drawing.Size(88, 23);
+            this.tab10Capacity1.TabIndex = 69;
+            this.tab10Capacity1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label65.Location = new System.Drawing.Point(680, 114);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(62, 15);
+            this.label65.TabIndex = 68;
+            this.label65.Text = "Capacity 1";
+            // 
+            // tab10Reload1
+            // 
+            this.tab10Reload1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Reload1.Location = new System.Drawing.Point(539, 132);
+            this.tab10Reload1.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Reload1.Name = "tab10Reload1";
+            this.tab10Reload1.Size = new System.Drawing.Size(88, 23);
+            this.tab10Reload1.TabIndex = 67;
+            this.tab10Reload1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label66.Location = new System.Drawing.Point(540, 114);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(87, 15);
+            this.label66.TabIndex = 66;
+            this.label66.Text = "Reload Speed 1";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label67.Location = new System.Drawing.Point(398, 35);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(86, 15);
+            this.label67.TabIndex = 65;
+            this.label67.Text = "Weapon Name";
+            // 
+            // tab10CbMerchantUpgrades
+            // 
+            this.tab10CbMerchantUpgrades.BackColor = System.Drawing.SystemColors.Window;
+            this.tab10CbMerchantUpgrades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tab10CbMerchantUpgrades.FormattingEnabled = true;
+            this.tab10CbMerchantUpgrades.Items.AddRange(new object[] {
+            "Handgun",
+            "Red9",
+            "Matilda",
+            "Punisher",
+            "Blacktail",
+            "Broken Butterfly",
+            "Shotgun",
+            "Striker",
+            "Riotgun",
+            "Rifle",
+            "Rifle w/ Semiauto",
+            "TMP",
+            "Minethrower",
+            "Chicago",
+            "Killer7",
+            "Handcannon"});
+            this.tab10CbMerchantUpgrades.Location = new System.Drawing.Point(324, 57);
+            this.tab10CbMerchantUpgrades.Name = "tab10CbMerchantUpgrades";
+            this.tab10CbMerchantUpgrades.Size = new System.Drawing.Size(233, 23);
+            this.tab10CbMerchantUpgrades.TabIndex = 64;
+            this.tab10CbMerchantUpgrades.SelectedIndexChanged += new System.EventHandler(this.tab10CbMerchantUpgrades_SelectedIndexChanged);
+            // 
+            // tab10Firing1
+            // 
+            this.tab10Firing1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firing1.Location = new System.Drawing.Point(409, 132);
+            this.tab10Firing1.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firing1.Name = "tab10Firing1";
+            this.tab10Firing1.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firing1.TabIndex = 63;
+            this.tab10Firing1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label68.Location = new System.Drawing.Point(413, 114);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(81, 15);
+            this.label68.TabIndex = 62;
+            this.label68.Text = "Firing Speed 1";
+            // 
+            // tab10Firepower1
+            // 
+            this.tab10Firepower1.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.tab10Firepower1.Location = new System.Drawing.Point(280, 132);
+            this.tab10Firepower1.Maximum = new decimal(new int[] {
+            320000,
+            0,
+            0,
+            0});
+            this.tab10Firepower1.Name = "tab10Firepower1";
+            this.tab10Firepower1.Size = new System.Drawing.Size(88, 23);
+            this.tab10Firepower1.TabIndex = 61;
+            this.tab10Firepower1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label69.Location = new System.Drawing.Point(291, 114);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(68, 15);
+            this.label69.TabIndex = 60;
+            this.label69.Text = "Firepower 1";
+            // 
+            // tab10WeaponID
+            // 
+            this.tab10WeaponID.Hexadecimal = true;
+            this.tab10WeaponID.Location = new System.Drawing.Point(153, 132);
+            this.tab10WeaponID.Maximum = new decimal(new int[] {
+            65000,
+            0,
+            0,
+            0});
+            this.tab10WeaponID.Name = "tab10WeaponID";
+            this.tab10WeaponID.ReadOnly = true;
+            this.tab10WeaponID.Size = new System.Drawing.Size(88, 23);
+            this.tab10WeaponID.TabIndex = 59;
+            this.tab10WeaponID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label70.Location = new System.Drawing.Point(164, 114);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(65, 15);
+            this.label70.TabIndex = 58;
+            this.label70.Text = "Weapon ID";
+            // 
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -2107,7 +2720,7 @@ namespace ELFeditor
             this.tabPage8.Controls.Add(this.label58);
             this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(885, 404);
+            this.tabPage8.Size = new System.Drawing.Size(885, 460);
             this.tabPage8.TabIndex = 8;
             this.tabPage8.Text = "Items Slots";
             // 
@@ -2503,7 +3116,7 @@ namespace ELFeditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 531);
+            this.ClientSize = new System.Drawing.Size(892, 587);
             this.Controls.Add(this.mainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -2579,6 +3192,25 @@ namespace ELFeditor
             ((System.ComponentModel.ISupportInitialize)(this.tab7PriceBox)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Reload2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firing2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Capacity1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Reload1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firing1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10Firepower1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tab10WeaponID)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab9YCoordinate)).EndInit();
@@ -2757,5 +3389,42 @@ namespace ELFeditor
         private Label label62;
         private ToolStripMenuItem importCustomELFToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator3;
+        private TabPage tabPage9;
+        private NumericUpDown tab10Capacity1;
+        private Label label65;
+        private NumericUpDown tab10Reload1;
+        private Label label66;
+        private Label label67;
+        private ComboBox tab10CbMerchantUpgrades;
+        private NumericUpDown tab10Firing1;
+        private Label label68;
+        private NumericUpDown tab10Firepower1;
+        private Label label69;
+        private NumericUpDown tab10WeaponID;
+        private Label label70;
+        private NumericUpDown tab10Capacity5;
+        private Label label76;
+        private NumericUpDown tab10Firepower5;
+        private Label label77;
+        private NumericUpDown tab10Capacity4;
+        private Label label75;
+        private NumericUpDown tab10Firepower4;
+        private Label label78;
+        private NumericUpDown tab10Capacity3;
+        private Label label79;
+        private NumericUpDown tab10Firepower3;
+        private Label label82;
+        private NumericUpDown tab10Capacity2;
+        private Label label71;
+        private NumericUpDown tab10Reload2;
+        private Label label72;
+        private NumericUpDown tab10Firing2;
+        private Label label73;
+        private NumericUpDown tab10Firepower2;
+        private Label label74;
+        private NumericUpDown tab10Capacity6;
+        private Label label80;
+        private NumericUpDown tab10Firepower6;
+        private Label label81;
     }
 }

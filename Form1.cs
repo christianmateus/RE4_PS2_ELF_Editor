@@ -1,10 +1,5 @@
-using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Text;
-using System.Windows.Forms;
 
 namespace ELFeditor
 {
@@ -1080,6 +1075,96 @@ namespace ELFeditor
             }
             bw.Close();
         }
+        public void GetMerchantUpgradesPrices(string regionName)
+        {
+            BinaryReader br = new BinaryReader(File.Open(dialog.FileName, FileMode.Open));
+            MerchantUpgradesPrices merchantUpgradesPrices = new MerchantUpgradesPrices();
+
+            int weaponIndex = tab10CbMerchantUpgrades.SelectedIndex; // Option selected on Combobox
+            int slesOffsetDifference = 0;
+
+            // Applies bytes difference if it's SLES
+            if (regionName == "sles")
+            { slesOffsetDifference = 0x280; }
+
+            // Throws error if not SLUS neither SLES
+            if (regionName != "slus" && regionName != "sles")
+            {
+                MessageBoxes("regionError");
+                br.Close();
+                return;
+            }
+
+            // Moves to offset and outputs data in the spinboxes
+            br.BaseStream.Position = merchantUpgradesPrices.MerchantUpgradesOffsets[weaponIndex][0] + slesOffsetDifference;
+            tab10WeaponID.Value = br.ReadInt16();
+            tab10Firepower1.Value = br.ReadInt16() * 10;
+            tab10Firepower2.Value = br.ReadInt16() * 10;
+            tab10Firepower3.Value = br.ReadInt16() * 10;
+            tab10Firepower4.Value = br.ReadInt16() * 10;
+            tab10Firepower5.Value = br.ReadInt16() * 10;
+            tab10Firepower6.Value = br.ReadInt16() * 10;
+            br.ReadInt16(); // padding
+            tab10Firing1.Value = br.ReadUInt16() * 10;
+            tab10Firing2.Value = br.ReadUInt16() * 10;
+            br.ReadInt16(); // padding
+            tab10Reload1.Value = br.ReadUInt16() * 10;
+            tab10Reload2.Value = br.ReadUInt16() * 10;
+            br.ReadInt16(); // padding
+            tab10Capacity1.Value = br.ReadInt16() * 10;
+            tab10Capacity2.Value = br.ReadInt16() * 10;
+            tab10Capacity3.Value = br.ReadInt16() * 10;
+            tab10Capacity4.Value = br.ReadInt16() * 10;
+            tab10Capacity5.Value = br.ReadInt16() * 10;
+            tab10Capacity6.Value = br.ReadInt16() * 10;
+            br.ReadInt16(); // padding
+            br.Close();
+        }
+        public void SetMerchantUpgradesPrices(string regionName)
+        {
+            BinaryWriter bw = new BinaryWriter(File.Open(dialog.FileName, FileMode.Open));
+            MerchantUpgradesPrices merchantUpgradesPrices = new MerchantUpgradesPrices();
+
+            int weaponIndex = tab10CbMerchantUpgrades.SelectedIndex; // Option selected on Combobox
+            int slesOffsetDifference = 0;
+
+            // Applies bytes difference if it's SLES
+            if (regionName == "sles")
+            { slesOffsetDifference = 0x280; }
+
+            // Throws error if not SLUS neither SLES
+            if (regionName != "slus" && regionName != "sles")
+            {
+                MessageBoxes("regionError");
+                bw.Close();
+                return;
+            }
+
+            // Moves to offset and outputs data in the spinboxes
+            bw.BaseStream.Position = merchantUpgradesPrices.MerchantUpgradesOffsets[weaponIndex][0] + slesOffsetDifference;
+            bw.Write((ushort)tab10WeaponID.Value);
+            bw.Write((ushort)(tab10Firepower1.Value / 10));
+            bw.Write((ushort)(tab10Firepower2.Value / 10));
+            bw.Write((ushort)(tab10Firepower3.Value / 10));
+            bw.Write((ushort)(tab10Firepower4.Value / 10));
+            bw.Write((ushort)(tab10Firepower5.Value / 10));
+            bw.Write((ushort)(tab10Firepower6.Value / 10));
+            bw.Write((ushort)0x00); // padding
+            bw.Write((ushort)(tab10Firing1.Value / 10));
+            bw.Write((ushort)(tab10Firing2.Value / 10));
+            bw.Write((ushort)0x00); // padding
+            bw.Write((ushort)(tab10Reload1.Value / 10));
+            bw.Write((ushort)(tab10Reload2.Value / 10));
+            bw.Write((ushort)0x00); // padding
+            bw.Write((ushort)(tab10Capacity1.Value / 10));
+            bw.Write((ushort)(tab10Capacity2.Value / 10));
+            bw.Write((ushort)(tab10Capacity3.Value / 10));
+            bw.Write((ushort)(tab10Capacity4.Value / 10));
+            bw.Write((ushort)(tab10Capacity5.Value / 10));
+            bw.Write((ushort)(tab10Capacity6.Value / 10));
+            bw.Write((ushort)0x00); // padding
+            bw.Close();
+        }
         public void GetItemsSlots(string regionName)
         {
             BinaryReader br = new BinaryReader(File.Open(dialog.FileName, FileMode.Open));
@@ -1245,6 +1330,8 @@ namespace ELFeditor
             dialog.Filter = "PS2 ISO Files(*.iso)|*.iso";
             dialog.ShowDialog();
 
+            this.Text = $"RE4 PS2 ELF Editor - {dialog.FileName}";
+
             if (GetDiscRegion() == "SLUS")
             {
                 HideFields("slus");
@@ -1284,6 +1371,7 @@ namespace ELFeditor
                     SetMerchantPrices("slus");
                     SetItemsSlots("slus");
                     SetMerchantStock("slus");
+                    SetMerchantUpgradesPrices("slus");
                 }
                 else if (region == "SLES")
                 {
@@ -1296,6 +1384,7 @@ namespace ELFeditor
                     SetMerchantPrices("sles");
                     SetItemsSlots("sles");
                     SetMerchantStock("sles");
+                    SetMerchantUpgradesPrices("sles");
                 }
                 else if (region == "SLPM")
                 {
@@ -1612,6 +1701,20 @@ namespace ELFeditor
             int tempValue = (int)(tab9Vertical.Value * tab9Horizontal.Value);
             tab9Result.Text = tempValue.ToString();
         }
-
+        private void tab10CbMerchantUpgrades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dialog.FileName != "")
+            {
+                if (GetDiscRegion() == "SLUS")
+                {
+                    GetMerchantUpgradesPrices("slus");
+                }
+                else if (GetDiscRegion() == "SLES")
+                {
+                    GetMerchantUpgradesPrices("sles");
+                }
+            }
+            else { return; }
+        }
     }
 }
